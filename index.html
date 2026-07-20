@@ -53,9 +53,16 @@
     .placeholder { font-size: 16px; color: #9387AC; }
     .book-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 28px 22px; }
     .book { display: flex; flex-direction: column; }
-    .book-cover { background: #F3EEFB; border: 1px solid #E4DEF2; border-radius: 14px; overflow: hidden; aspect-ratio: 3 / 4; display: flex; align-items: center; justify-content: center; transition: transform .15s; }
-    .book:hover .book-cover { transform: translateY(-4px); }
-    .book-cover img { width: 100%; height: 100%; object-fit: contain; display: block; }
+    .flip { aspect-ratio: 3 / 4; perspective: 1200px; cursor: pointer; }
+    .flip-inner { position: relative; width: 100%; height: 100%; transition: transform .6s cubic-bezier(.22,.61,.36,1); transform-style: preserve-3d; will-change: transform; }
+    .flip.flipped .flip-inner { transform: rotateY(180deg); }
+    .flip-face { position: absolute; inset: 0; backface-visibility: hidden; -webkit-backface-visibility: hidden; border-radius: 14px; border: 1px solid #E4DEF2; overflow: hidden; }
+    .flip-front { background: #F3EEFB; display: flex; align-items: center; justify-content: center; }
+    .flip-front img { width: 100%; height: 100%; object-fit: contain; display: block; }
+    .flip-back { background: #4B2E83; color: #F3EEFB; transform: rotateY(180deg); padding: 18px; display: flex; flex-direction: column; }
+    .flip-back .b-title { font-family: 'Fraunces', serif; font-size: 16px; font-weight: 600; margin-bottom: 8px; line-height: 1.25; }
+    .flip-back .b-summary { font-size: 13px; line-height: 1.5; color: #E4DEF2; overflow-y: auto; }
+    .flip-hint { position: absolute; bottom: 8px; right: 10px; font-size: 11px; color: #C9BEE8; }
     .book-title { font-size: 17px; font-weight: 500; color: #3A2363; margin-top: 12px; }
     .section-head h2 { font-size: 26px; color: #3A2363; margin-bottom: 22px; }
 
@@ -169,74 +176,263 @@
   <section id="books" class="container">
     <div class="section-head"><h2>Books</h2></div>
     <div class="book-grid">
+      
       <div class="book">
-        <div class="book-cover"><img src="book-1.png" alt="Book cover 1"></div>
+        <div class="flip">
+          <div class="flip-inner">
+            <div class="flip-face flip-front">
+              <img src="book-1.png" alt="The Rose and the Fir Tree">
+              <span class="flip-hint">tap</span>
+            </div>
+            <div class="flip-face flip-back">
+              <div class="b-title">The Rose and the Fir Tree</div>
+              <div class="b-summary">Short summary placeholder — add a couple of sentences about this book here.</div>
+            </div>
+          </div>
+        </div>
         <h3 class="book-title">The Rose and the Fir Tree</h3>
       </div>
       <div class="book">
-        <div class="book-cover"><img src="book-2.png" alt="Book cover 2"></div>
+        <div class="flip">
+          <div class="flip-inner">
+            <div class="flip-face flip-front">
+              <img src="book-2.png" alt="Nareg's Dream">
+              <span class="flip-hint">tap</span>
+            </div>
+            <div class="flip-face flip-back">
+              <div class="b-title">Nareg's Dream</div>
+              <div class="b-summary">Short summary placeholder — add a couple of sentences about this book here.</div>
+            </div>
+          </div>
+        </div>
         <h3 class="book-title">Nareg's Dream</h3>
       </div>
       <div class="book">
-        <div class="book-cover"><img src="book-3.png" alt="Book cover 3"></div>
+        <div class="flip">
+          <div class="flip-inner">
+            <div class="flip-face flip-front">
+              <img src="book-3.png" alt="Nareg's Palace">
+              <span class="flip-hint">tap</span>
+            </div>
+            <div class="flip-face flip-back">
+              <div class="b-title">Nareg's Palace</div>
+              <div class="b-summary">Short summary placeholder — add a couple of sentences about this book here.</div>
+            </div>
+          </div>
+        </div>
         <h3 class="book-title">Nareg's Palace</h3>
       </div>
       <div class="book">
-        <div class="book-cover"><img src="book-4.png" alt="Book cover 4"></div>
+        <div class="flip">
+          <div class="flip-inner">
+            <div class="flip-face flip-front">
+              <img src="book-4.png" alt="Lori &amp; Nareg’s Letters to Tigranes the Great">
+              <span class="flip-hint">tap</span>
+            </div>
+            <div class="flip-face flip-back">
+              <div class="b-title">Lori &amp; Nareg’s Letters to Tigranes the Great</div>
+              <div class="b-summary">Short summary placeholder — add a couple of sentences about this book here.</div>
+            </div>
+          </div>
+        </div>
         <h3 class="book-title">Lori &amp; Nareg’s Letters to Tigranes the Great</h3>
       </div>
       <div class="book">
-        <div class="book-cover"><img src="book-5.png" alt="Book cover 5"></div>
+        <div class="flip">
+          <div class="flip-inner">
+            <div class="flip-face flip-front">
+              <img src="book-5.png" alt="Lori, Nareg, and the Four Seasons">
+              <span class="flip-hint">tap</span>
+            </div>
+            <div class="flip-face flip-back">
+              <div class="b-title">Lori, Nareg, and the Four Seasons</div>
+              <div class="b-summary">Short summary placeholder — add a couple of sentences about this book here.</div>
+            </div>
+          </div>
+        </div>
         <h3 class="book-title">Lori, Nareg, and the Four Seasons</h3>
       </div>
       <div class="book">
-        <div class="book-cover"><img src="book-6.png" alt="Book cover 6"></div>
+        <div class="flip">
+          <div class="flip-inner">
+            <div class="flip-face flip-front">
+              <img src="book-6.png" alt="Lori and the Little Sprout">
+              <span class="flip-hint">tap</span>
+            </div>
+            <div class="flip-face flip-back">
+              <div class="b-title">Lori and the Little Sprout</div>
+              <div class="b-summary">Short summary placeholder — add a couple of sentences about this book here.</div>
+            </div>
+          </div>
+        </div>
         <h3 class="book-title">Lori and the Little Sprout</h3>
       </div>
       <div class="book">
-        <div class="book-cover"><img src="book-7.png" alt="Book cover 7"></div>
+        <div class="flip">
+          <div class="flip-inner">
+            <div class="flip-face flip-front">
+              <img src="book-7.png" alt="Lori and Nareg in Armenia">
+              <span class="flip-hint">tap</span>
+            </div>
+            <div class="flip-face flip-back">
+              <div class="b-title">Lori and Nareg in Armenia</div>
+              <div class="b-summary">Short summary placeholder — add a couple of sentences about this book here.</div>
+            </div>
+          </div>
+        </div>
         <h3 class="book-title">Lori and Nareg in Armenia</h3>
       </div>
       <div class="book">
-        <div class="book-cover"><img src="book-8.png" alt="Book cover 8"></div>
-        <h3 class="book-title">Lori &amp; Nareg with Mount Ararat </h3>
+        <div class="flip">
+          <div class="flip-inner">
+            <div class="flip-face flip-front">
+              <img src="book-8.png" alt="Lori &amp; Nareg with Mount Ararat">
+              <span class="flip-hint">tap</span>
+            </div>
+            <div class="flip-face flip-back">
+              <div class="b-title">Lori &amp; Nareg with Mount Ararat</div>
+              <div class="b-summary">Short summary placeholder — add a couple of sentences about this book here.</div>
+            </div>
+          </div>
+        </div>
+        <h3 class="book-title">Lori &amp; Nareg with Mount Ararat</h3>
       </div>
       <div class="book">
-        <div class="book-cover"><img src="book-9.png" alt="Book cover 9"></div>
+        <div class="flip">
+          <div class="flip-inner">
+            <div class="flip-face flip-front">
+              <img src="book-9.png" alt="Lori and the Animals">
+              <span class="flip-hint">tap</span>
+            </div>
+            <div class="flip-face flip-back">
+              <div class="b-title">Lori and the Animals</div>
+              <div class="b-summary">Short summary placeholder — add a couple of sentences about this book here.</div>
+            </div>
+          </div>
+        </div>
         <h3 class="book-title">Lori and the Animals</h3>
       </div>
       <div class="book">
-        <div class="book-cover"><img src="book-10.png" alt="Book cover 10"></div>
+        <div class="flip">
+          <div class="flip-inner">
+            <div class="flip-face flip-front">
+              <img src="book-10.png" alt="Lori and Nareg’s Armenian Holidays">
+              <span class="flip-hint">tap</span>
+            </div>
+            <div class="flip-face flip-back">
+              <div class="b-title">Lori and Nareg’s Armenian Holidays</div>
+              <div class="b-summary">Short summary placeholder — add a couple of sentences about this book here.</div>
+            </div>
+          </div>
+        </div>
         <h3 class="book-title">Lori and Nareg’s Armenian Holidays</h3>
       </div>
       <div class="book">
-        <div class="book-cover"><img src="book-11.png" alt="Book cover 11"></div>
+        <div class="flip">
+          <div class="flip-inner">
+            <div class="flip-face flip-front">
+              <img src="book-11.png" alt="Lori &amp; Nareg’s Happy Day">
+              <span class="flip-hint">tap</span>
+            </div>
+            <div class="flip-face flip-back">
+              <div class="b-title">Lori &amp; Nareg’s Happy Day</div>
+              <div class="b-summary">Short summary placeholder — add a couple of sentences about this book here.</div>
+            </div>
+          </div>
+        </div>
         <h3 class="book-title">Lori &amp; Nareg’s Happy Day</h3>
       </div>
       <div class="book">
-        <div class="book-cover"><img src="book-12.png" alt="Book cover 12"></div>
+        <div class="flip">
+          <div class="flip-inner">
+            <div class="flip-face flip-front">
+              <img src="book-12.png" alt="Lori &amp; Nareg’s Journey to Armenia">
+              <span class="flip-hint">tap</span>
+            </div>
+            <div class="flip-face flip-back">
+              <div class="b-title">Lori &amp; Nareg’s Journey to Armenia</div>
+              <div class="b-summary">Short summary placeholder — add a couple of sentences about this book here.</div>
+            </div>
+          </div>
+        </div>
         <h3 class="book-title">Lori &amp; Nareg’s Journey to Armenia</h3>
       </div>
       <div class="book">
-        <div class="book-cover"><img src="book-13.png" alt="Book cover 13"></div>
+        <div class="flip">
+          <div class="flip-inner">
+            <div class="flip-face flip-front">
+              <img src="book-13.png" alt="Lori &amp; Nareg’s Hero">
+              <span class="flip-hint">tap</span>
+            </div>
+            <div class="flip-face flip-back">
+              <div class="b-title">Lori &amp; Nareg’s Hero</div>
+              <div class="b-summary">Short summary placeholder — add a couple of sentences about this book here.</div>
+            </div>
+          </div>
+        </div>
         <h3 class="book-title">Lori &amp; Nareg’s Hero</h3>
       </div>
       <div class="book">
-        <div class="book-cover"><img src="book-14.png" alt="Book cover 14"></div>
+        <div class="flip">
+          <div class="flip-inner">
+            <div class="flip-face flip-front">
+              <img src="book-14.png" alt="Lori &amp; Nareg’s Performance">
+              <span class="flip-hint">tap</span>
+            </div>
+            <div class="flip-face flip-back">
+              <div class="b-title">Lori &amp; Nareg’s Performance</div>
+              <div class="b-summary">Short summary placeholder — add a couple of sentences about this book here.</div>
+            </div>
+          </div>
+        </div>
         <h3 class="book-title">Lori &amp; Nareg’s Performance</h3>
       </div>
       <div class="book">
-        <div class="book-cover"><img src="book-15.png" alt="Book cover 15"></div>
+        <div class="flip">
+          <div class="flip-inner">
+            <div class="flip-face flip-front">
+              <img src="book-15.png" alt="Lori &amp; Nareg’s Forget-Me-Not Flower">
+              <span class="flip-hint">tap</span>
+            </div>
+            <div class="flip-face flip-back">
+              <div class="b-title">Lori &amp; Nareg’s Forget-Me-Not Flower</div>
+              <div class="b-summary">Short summary placeholder — add a couple of sentences about this book here.</div>
+            </div>
+          </div>
+        </div>
         <h3 class="book-title">Lori &amp; Nareg’s Forget-Me-Not Flower</h3>
       </div>
       <div class="book">
-        <div class="book-cover"><img src="book-16.png" alt="Book cover 16"></div>
+        <div class="flip">
+          <div class="flip-inner">
+            <div class="flip-face flip-front">
+              <img src="book-16.png" alt="Lori and Nareg’s Summer Camp">
+              <span class="flip-hint">tap</span>
+            </div>
+            <div class="flip-face flip-back">
+              <div class="b-title">Lori and Nareg’s Summer Camp</div>
+              <div class="b-summary">Short summary placeholder — add a couple of sentences about this book here.</div>
+            </div>
+          </div>
+        </div>
         <h3 class="book-title">Lori and Nareg’s Summer Camp</h3>
       </div>
       <div class="book">
-        <div class="book-cover"><img src="book-17.png" alt="Book cover 17"></div>
+        <div class="flip">
+          <div class="flip-inner">
+            <div class="flip-face flip-front">
+              <img src="book-17.png" alt="Armenia’s Mountains and Rivers">
+              <span class="flip-hint">tap</span>
+            </div>
+            <div class="flip-face flip-back">
+              <div class="b-title">Armenia’s Mountains and Rivers</div>
+              <div class="b-summary">Short summary placeholder — add a couple of sentences about this book here.</div>
+            </div>
+          </div>
+        </div>
         <h3 class="book-title">Armenia’s Mountains and Rivers</h3>
       </div>
+    
     </div>
   </section>
 
@@ -311,6 +507,18 @@
       requestAnimationFrame(frame);
     }
     requestAnimationFrame(frame);
+  })();
+  </script>
+
+  <script>
+  (function () {
+    document.querySelectorAll('.flip').forEach(function (card) {
+      card.addEventListener('click', function () {
+        card.classList.toggle('flipped');
+        // force an immediate repaint so the flip shows without needing a mouse move
+        void card.offsetWidth;
+      });
+    });
   })();
   </script>
 
