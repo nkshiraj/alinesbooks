@@ -78,7 +78,10 @@
     .flip-back .b-summary { font-size: 13px; line-height: 1.5; color: #E4DEF2; overflow-y: auto; }
     .flip-hint { position: absolute; bottom: 8px; right: 8px; font-size: 11px; font-weight: 600; color: #000; background: rgba(255,255,255,.85); padding: 2px 8px; border-radius: 999px; line-height: 1.4; pointer-events: none; }
     .book-title { font-size: 17px; font-weight: 500; color: #3A2363; margin-top: 12px; padding: 0 8px; }
-    .section-head h2 { font-size: 26px; color: #3A2363; margin-bottom: 22px; }
+    .section-head { display: flex; align-items: center; justify-content: center; gap: 16px; margin-bottom: 22px; }
+    .section-head h2 { font-size: 26px; color: #3A2363; margin-bottom: 0; text-align: center; }
+    .branch { width: 90px; height: auto; flex: 0 0 auto; object-fit: contain; }
+    .branch.right { transform: scaleX(-1); }
 
     .books { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; }
     .book {
@@ -118,7 +121,8 @@
       .logo { font-size: 20px; }
 
       section { padding: 40px 18px; }
-      .section-head h2 { font-size: 22px; margin-bottom: 18px; }
+      .section-head h2 { font-size: 22px; margin-bottom: 0; }
+      .branch { width: 48px; }
       .about-name { font-size: 24px; margin-bottom: 20px; }
       .about p { font-size: 16px; }
       .about-text p { max-width: none; }
@@ -177,7 +181,7 @@
   </header>
 
   <section id="books" class="container">
-    <div class="section-head"><h2>Books</h2></div>
+    <div class="section-head"><img class="branch left" src="branch.png" alt=""><h2>Books</h2><img class="branch right" src="branch.png" alt=""></div>
     <div class="book-grid">
       <div class="book">
         <div class="flip">
@@ -475,7 +479,7 @@ importance of love and care.</div>
 
 
   <section id="games" class="container">
-    <div class="section-head"><h2>Board Games</h2></div>
+    <div class="section-head"><img class="branch left" src="branch.png" alt=""><h2>Board Games</h2><img class="branch right" src="branch.png" alt=""></div>
     <div class="book-grid">
       <div class="book">
         <div class="flip">
@@ -496,7 +500,7 @@ importance of love and care.</div>
   </section>
 
   <section id="about" class="about container">
-    <h2 class="about-name">Aline Bezdikian</h2>
+    <div class="section-head"><img class="branch left" src="branch.png" alt=""><h2 class="about-name" style="margin-bottom:0;">Aline Bezdikian</h2><img class="branch right" src="branch.png" alt=""></div>
     <div class="about-grid">
       <div class="about-text">
         <p>Aline Bezdikian-Shirajian is an Armenian-American educator, children's author, and cultural advocate who has dedicated her life to preserving and promoting the Armenian language, history, and culture.</p>
@@ -515,7 +519,7 @@ importance of love and care.</div>
   </section>
 
   <section id="contact" class="container">
-    <div class="section-head"><h2>Contact</h2></div>
+    <div class="section-head"><img class="branch left" src="branch.png" alt=""><h2>Contact</h2><img class="branch right" src="branch.png" alt=""></div>
     <p class="placeholder">For events, readings, and enquiries: <a href="mailto:alineshyenest@gmail.com" style="color:#6B3FA0;">alineshyenest@gmail.com</a></p>
   </section>
 
