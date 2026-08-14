@@ -61,6 +61,9 @@
     .flower .center::after { content:""; position:absolute; inset:20px; background:#2E2147; border-radius:50%; }
 
     section { padding: 52px 24px; scroll-margin-top: 20px; }
+    .intro { text-align: center; padding: 48px 24px 8px; display: flex; flex-direction: column; align-items: center; }
+    .intro-logo { width: 240px; max-width: 70%; height: auto; margin-bottom: 20px; }
+    .intro-text { font-size: 18px; line-height: 1.7; color: #5A4E73; max-width: 680px; }
     .placeholder { font-size: 16px; color: #9387AC; }
     .book-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 28px 22px; }
     .book { display: flex; flex-direction: column; }
@@ -104,7 +107,6 @@
     .collage .c-bl  { grid-area: bl; aspect-ratio: 1; }
     .collage .c-br  { grid-area: br; aspect-ratio: 1; }
     /* Tablet */
-    /* Tablet */
     @media (max-width: 720px) {
       .about-grid { grid-template-columns: 1fr; gap: 28px; }
     }
@@ -126,25 +128,9 @@
 
       #canary { display: none; }
 
-      footer { padding: 36px 18px; }
-    }
-
-    /* Mobile */
-    @media (max-width: 600px) {
-      nav { justify-content: center; text-align: center; padding: 16px; }
-      nav ul { gap: 16px; flex-wrap: wrap; justify-content: center; }
-      .logo { font-size: 20px; }
-
-      section { padding: 40px 18px; }
-      .section-head h2 { font-size: 22px; margin-bottom: 18px; }
-      .about-name { font-size: 24px; margin-bottom: 20px; }
-      .about p { font-size: 16px; }
-      .about-text p { max-width: none; }
-
-      .book-grid { grid-template-columns: repeat(2, 1fr); gap: 20px 14px; }
-      .book-title { font-size: 15px; }
-
-      #canary { display: none; }
+      .intro { padding: 32px 18px 4px; }
+      .intro-logo { width: 180px; }
+      .intro-text { font-size: 16px; }
 
       footer { padding: 36px 18px; }
     }
@@ -176,7 +162,7 @@
 <body>
 
   <nav class="container">
-    <div class="logo"><img class="mark" src="logo.png" alt="Aline's Hye Nest logo">Aline's Hye Nest</div>
+    <div class="logo">Aline's Hye Nest</div>
     <ul>
       <li><a href="#books">Books</a></li>
       <li><a href="#games">Board Games</a></li>
@@ -184,6 +170,11 @@
       <li><a href="#contact">Contact</a></li>
     </ul>
   </nav>
+
+  <header class="intro container">
+    <img class="intro-logo" src="logo.png" alt="Aline's Hye Nest logo">
+    <p class="intro-text">Welcome to Aline's Hye Nest, where learning and education go hand in hand. Here you can find books in Armenian, mostly in 2 dialects, and bilingual board games on Armenia's geography, culture, history, and touristic places.</p>
+  </header>
 
   <section id="books" class="container">
     <div class="section-head"><h2>Books</h2></div>
