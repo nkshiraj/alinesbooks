@@ -78,6 +78,12 @@
     .flip-back .b-summary { font-size: 13px; line-height: 1.5; color: #E4DEF2; overflow-y: auto; }
     .flip-hint { position: absolute; bottom: 8px; right: 8px; font-size: 11px; font-weight: 600; color: #000; background: rgba(255,255,255,.85); padding: 2px 8px; border-radius: 999px; line-height: 1.4; pointer-events: none; }
     .book-title { font-size: 17px; font-weight: 500; color: #3A2363; margin-top: 12px; padding: 0 8px; }
+    /* Board games: larger cards for square covers + longer rules text */
+    #games .book-grid { grid-template-columns: repeat(auto-fill, minmax(300px, 340px)); justify-content: center; }
+    #games .flip { aspect-ratio: 1 / 1; }
+    #games .flip-back { padding: 24px; }
+    #games .flip-back .b-title { font-size: 19px; margin-bottom: 12px; }
+    #games .flip-back .b-summary { font-size: 15px; line-height: 1.6; }
     .section-head { display: flex; align-items: center; justify-content: center; gap: 16px; margin-bottom: 22px; }
     .section-head h2 { font-size: 26px; color: #3A2363; margin-bottom: 0; text-align: center; }
     .branch { width: 90px; height: auto; flex: 0 0 auto; object-fit: contain; }
@@ -136,6 +142,8 @@
 
       .book-grid { grid-template-columns: repeat(2, 1fr); gap: 20px 14px; }
       .book-title { font-size: 15px; }
+      #games .book-grid { grid-template-columns: 1fr; }
+      #games .flip-back .b-summary { font-size: 14px; }
 
       #canary { display: none; }
 
@@ -497,11 +505,41 @@ importance of love and care.</div>
             </div>
             <div class="flip-face flip-back">
               <div class="b-title">Armenia’s Mountains and Rivers</div>
-              <div class="b-summary">Short summary placeholder — add a couple of sentences about this book here.</div>
+              <div class="b-summary">This game may be played with 2 to 4 players. The goal is to reach the top of Ararat Mountain — the first player to reach square 100 wins. Any time a pawn ends its move on a picture square at the top of a river, it slides down to the picture square at the bottom of the river. Any time a pawn ends its move on a picture square at the bottom of a mountain, it climbs up to the picture square at the top of the mountain.</div>
             </div>
           </div>
         </div>
         <h3 class="book-title">Armenia’s Mountains and Rivers</h3>
+      </div>
+      <div class="book">
+        <div class="flip">
+          <div class="flip-inner">
+            <div class="flip-face flip-front">
+              <img src="game-2.png" alt="Gata!">
+              <span class="flip-hint">tap</span>
+            </div>
+            <div class="flip-face flip-back">
+              <div class="b-title">Gata!</div>
+              <div class="b-summary">This game may be played with 2 to 4 players. The 64 cards are divided into 8 categories: language, folk costume, cuisine, holidays, religion, history, art, and symbols. The cards are read by a designated person. If a player has the picture matching the card read, they cover it on their board with a game chip. The first person to cover all 16 slices of the Gata declares victory and says "Gata!"</div>
+            </div>
+          </div>
+        </div>
+        <h3 class="book-title">Gata!</h3>
+      </div>
+      <div class="book">
+        <div class="flip">
+          <div class="flip-inner">
+            <div class="flip-face flip-front">
+              <img src="game-3.png" alt="Tickets to Armenia">
+              <span class="flip-hint">tap</span>
+            </div>
+            <div class="flip-face flip-back">
+              <div class="b-title">Tickets to Armenia</div>
+              <div class="b-summary">This game box includes 2 games. It may be played with 2 players or with a large group. The game is designed to make learning about Armenia both entertaining and interactive, introducing players to many of the country's most significant landmarks, monuments, and historical touristic sites.</div>
+            </div>
+          </div>
+        </div>
+        <h3 class="book-title">Tickets to Armenia</h3>
       </div>
     </div>
   </section>
