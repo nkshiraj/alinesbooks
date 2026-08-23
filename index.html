@@ -79,11 +79,12 @@
     .flip-hint { position: absolute; bottom: 8px; right: 8px; font-size: 11px; font-weight: 600; color: #000; background: rgba(255,255,255,.85); padding: 2px 8px; border-radius: 999px; line-height: 1.4; pointer-events: none; }
     .book-title { font-size: 17px; font-weight: 500; color: #3A2363; margin-top: 12px; padding: 0 8px; }
     /* Board games: larger cards for square covers + longer rules text */
-    #games .book-grid { grid-template-columns: repeat(auto-fill, minmax(300px, 340px)); justify-content: center; }
+    #games .book-grid, #workbooks .book-grid { grid-template-columns: repeat(auto-fill, minmax(300px, 340px)); justify-content: center; }
     #games .flip { aspect-ratio: 1 / 1; }
-    #games .flip-back { padding: 24px; }
-    #games .flip-back .b-title { font-size: 19px; margin-bottom: 12px; }
-    #games .flip-back .b-summary { font-size: 15px; line-height: 1.6; }
+    #workbooks .flip { aspect-ratio: 3 / 4; }
+    #games .flip-back, #workbooks .flip-back { padding: 24px; }
+    #games .flip-back .b-title, #workbooks .flip-back .b-title { font-size: 19px; margin-bottom: 12px; }
+    #games .flip-back .b-summary, #workbooks .flip-back .b-summary { font-size: 15px; line-height: 1.6; }
     .section-head { display: flex; align-items: center; justify-content: center; gap: 16px; margin-bottom: 22px; }
     .section-head h2 { font-size: 26px; color: #3A2363; margin-bottom: 0; text-align: center; }
     .branch { width: 90px; height: auto; flex: 0 0 auto; object-fit: contain; }
@@ -142,7 +143,7 @@
 
       .book-grid { grid-template-columns: repeat(2, 1fr); gap: 20px 14px; }
       .book-title { font-size: 15px; }
-      #games .book-grid { grid-template-columns: 1fr; }
+      #games .book-grid, #workbooks .book-grid { grid-template-columns: 1fr; }
       #games .flip-back .b-summary { font-size: 14px; }
 
       #canary { display: none; }
@@ -185,6 +186,7 @@
     <ul>
       <li><a href="#books">Books</a></li>
       <li><a href="#games">Board Games</a></li>
+      <li><a href="#workbooks">Workbooks</a></li>
       <li><a href="#about">About</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
@@ -540,6 +542,28 @@ importance of love and care.</div>
           </div>
         </div>
         <h3 class="book-title">Tickets to Armenia</h3>
+      </div>
+    </div>
+  </section>
+
+
+  <section id="workbooks" class="container">
+    <div class="section-head"><img class="branch left" src="branch.png" alt=""><h2>Workbooks</h2><img class="branch right" src="branch.png" alt=""></div>
+    <div class="book-grid">
+      <div class="book">
+        <div class="flip">
+          <div class="flip-inner">
+            <div class="flip-face flip-front">
+              <img src="workbook-1.jpg" alt="Discovering Armenian National Symbols workbook">
+              <span class="flip-hint">tap</span>
+            </div>
+            <div class="flip-face flip-back">
+              <div class="b-title">Armenian National Symbols Workbook</div>
+              <div class="b-summary">The workbook introduces children to Armenia's most important national symbols and emblems through clear, concise explanations. Each topic is accompanied by a coloring page, allowing students to reinforce the learning through creative activities. "This publication can be used as a supplementary classroom resource for elementary school students, many of whom are not yet familiar with these important Armenian symbols," the author explains. The workbook is designed for use both at home and in Armenian schools, helping young learners develop a stronger understanding and appreciation of Armenian heritage through interactive learning.</div>
+            </div>
+          </div>
+        </div>
+        <h3 class="book-title">Armenian National Symbols Workbook</h3>
       </div>
     </div>
   </section>
